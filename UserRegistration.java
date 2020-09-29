@@ -4,16 +4,19 @@ import java.util.regex.*;
 
 public class UserRegistration
 {
-	public static void validateFirstName(String firstName)
+	
+        public static void validateFirstName(String firstName)
 	{
 		String regex = "^[A-Z]{1}[a-zA-z]{2,}";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(firstName);
 
-		if(matcher.find())
+		if(matcher.find()) {
 			System.out.println(firstName + " is valid");
-		else
+		}
+                else {
 			System.out.println(firstName + " is not valid");
+                }
 	}
 	public static void main(String[] args) {
 		String firstName = "";
@@ -22,4 +25,5 @@ public class UserRegistration
 		firstName = input.nextLine();
 		validateFirstName(firstName);	
 	}
+
 }
