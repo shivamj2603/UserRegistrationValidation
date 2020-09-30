@@ -26,13 +26,25 @@ public class UserRegistration
 			System.out.println("Email is Valid");
 		}
 		else {
-		System.out.println("Email is invalid");
+			System.out.println("Email is invalid");
 		}
+	}
+	public static void validateMobile(String mobileNumber)
+	{
+		String regex="[0-9]{2}[ ][1-9][0-9]{9}";
+		Pattern pattern=Pattern.compile(regex);
+		Matcher matcher=pattern.matcher(mobileNumber);
+
+		if(matcher.find())
+			System.out.println(mobileNumber + " is valid");
+		else
+			System.out.println(mobileNumber + " is not valid");
 	}
 	public static void main(String[] args) {
 		String firstName = "";
 		String lastName = "";
 		String email = "";
+		String mobileNumber = "";
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter the first name");
 		firstName = input.nextLine();
@@ -43,6 +55,9 @@ public class UserRegistration
 		System.out.println("Enter the Email");
 		email = input.nextLine();
 		validateEmail(email);//validation of Email
+		System.out.println("Enter the Mobile Number");
+		mobileNumber = input.nextLine();
+		validateMobile(mobileNumber);//validation of MobileNumber
 	}
 
 }
