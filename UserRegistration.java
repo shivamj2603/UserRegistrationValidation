@@ -10,7 +10,6 @@ public class UserRegistration
 		String regex = "^[A-Z]{1}[a-zA-z]{2,}";
 		Pattern pattern = Pattern.compile(regex);
 		Matcher matcher = pattern.matcher(name);
-
 		if(matcher.find()) {
 			System.out.println(name + " is valid");
 		}
@@ -33,9 +32,9 @@ public class UserRegistration
 	}
 	public static String validateMobile(String mobileNumber)
 	{
-		String regex="[0-9]{2}[ ][1-9][0-9]{9}";
-		Pattern pattern=Pattern.compile(regex);
-		Matcher matcher=pattern.matcher(mobileNumber);
+		String regex = "[0-9]{2}[ ][1-9][0-9]{9}";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(mobileNumber);
 
 		if(matcher.find())
 			System.out.println(mobileNumber + " is valid");
@@ -46,8 +45,8 @@ public class UserRegistration
 	public static String validatePassword(String password)
 	{
 		String regex = "(?=.*[A-Z])(?=.*[0-9])(?=.[@#$%^&*])[A-Z-a-z0-9]{8,}$";
-		Pattern pattern=Pattern.compile(regex);
-		Matcher matcher=pattern.matcher(password);
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
 
 		if(matcher.find()) {
 			System.out.println(password + " is valid");
